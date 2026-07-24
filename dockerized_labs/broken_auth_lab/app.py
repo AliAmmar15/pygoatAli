@@ -120,4 +120,5 @@ def dashboard():
     return redirect(url_for('lab'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)  # Vulnerable: Debug mode enabled in production 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=False)  # Fixed: Debug mode disabled in production
