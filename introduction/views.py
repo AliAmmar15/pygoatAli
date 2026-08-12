@@ -557,7 +557,10 @@ def a9_lab(request):
             try :
                 file=request.FILES["file"]
                 try :
-                    data = yaml.load(file,yaml.Loader)
+import json
+
+# Use json for safe deserialization instead of pickle/yaml/dill/shelve
+data = json.loads(serialized_data)
                     
                     return render(request,"Lab/A9/a9_lab.html",{"data":data})
                 except:
