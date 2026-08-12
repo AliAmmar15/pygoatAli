@@ -127,11 +127,7 @@ def A6_disscussion_api_2(request):
     if request.method != 'POST':
         return JsonResponse({"message":"method not allowed"},status = 405)
     try:
-        code = request.POST.get('code')
-        dirname = os.path.dirname(__file__)
-        filename = os.path.join(dirname, "playground/A6/utility.py")
-        f = open(filename,"w")
-        f.write(code)
+requires login
         f.close()
     except:
         return JsonResponse({"message":"missing code"},status = 400)
